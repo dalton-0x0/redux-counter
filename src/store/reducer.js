@@ -33,6 +33,14 @@ const reducer = (state = initialState, action) => {
                     value: state.counter,
                 }),
             };
+        case "DELETE_RESULT":
+            const updatedArray = state.results.filter(
+                (result) => result.id !== action.resultId
+            );
+            return {
+                ...state,
+                results: updatedArray,
+            };
         default:
             break;
     }
