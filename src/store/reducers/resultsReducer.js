@@ -23,9 +23,8 @@ const resultsReducer = (state = initialState, action) => {
                 results: updatedArray,
             };
         default:
-            break;
+            return state;
     }
-    return state;
 };
 
 export default resultsReducer;
