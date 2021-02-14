@@ -31,6 +31,4 @@ const counterReducer = (state = initialState, action) => {
     }
 };
 
-// testing git
-
 export default counterReducer;
