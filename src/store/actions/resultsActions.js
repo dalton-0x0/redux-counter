@@ -1,10 +1,11 @@
 import * as actionTypes from "./actionTypes";
 
 export const saveResult = (result) => {
-    // don't do data transformation in the action creator, better at the reducer
+    // move data transformation to reducer
     // const updatedResult = result * 1.5555;
     return {
         type: actionTypes.STORE_RESULT,
+        // result: updatedResult,
         result,
     };
 };
@@ -12,10 +13,10 @@ export const saveResult = (result) => {
 export const storeResult = (result) => {
     return (dispatch, getState) => {
         setTimeout(() => {
-            const oldCounter = getState().counterRoot.counter; // not advisable to put too much logic here
-            console.log("oldCounter", oldCounter);
+            const oldCounter = getState().counterRoot.counter; 
+            console.log("oldCounter", oldCounter); // showing use case of getState()
             dispatch(saveResult(result));
-        }, 2000);
+        }, 500);
     };
 };
 
